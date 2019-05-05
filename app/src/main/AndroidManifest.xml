@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.accuair">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/logo"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/logo"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".Location"
+            android:label="Location"></activity>
+        <activity
+            android:name=".Conditions"
+            android:label="Terms and Conditions" />
+        <activity
+            android:name=".Aboutus"
+            android:label="About Us" />
+        <activity
+            android:name=".Login"
+            android:label="Log in" />
+        <activity
+            android:name=".Signup"
+            android:label="Sign up" />
+        <activity
+            android:name=".Accuair"
+            android:label="AccuAir">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Settings"
+            android:label="Settings" />
+        <activity android:name=".Home" />
+    </application>
+
+</manifest>
