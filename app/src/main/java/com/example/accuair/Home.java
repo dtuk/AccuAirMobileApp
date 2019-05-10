@@ -6,16 +6,20 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.CardView;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.GridLayout;
 
-public class Home extends AppCompatActivity {
+public class Home extends AppCompatActivity implements View.OnClickListener{
 
     private DrawerLayout home_drawer;
     private ActionBarDrawerToggle ntoggle;
     public Button location_but;
     NavigationView navigationView;
+    GridLayout mainGrid;
+    private CardView co2,co,temp,humid;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +27,20 @@ public class Home extends AppCompatActivity {
         setContentView(R.layout.activity_home);
 
         Location_but();
+
+        //card view
+        co2 = (CardView)findViewById(R.id.co2);
+        co = (CardView)findViewById(R.id.co);
+        temp= (CardView)findViewById(R.id.temp);
+        humid = (CardView)findViewById(R.id.humid);
+
+        co2.setOnClickListener(this);
+        co.setOnClickListener(this);
+        temp.setOnClickListener(this);
+        humid.setOnClickListener(this);
+
+       // mainGrid = (GridLayout) findViewById(R.id.mainGrid);
+        //navigation drawer
 
         home_drawer = (DrawerLayout)findViewById(R.id.home_drawer);
         ntoggle = new ActionBarDrawerToggle(this,home_drawer,R.string.open, R.string.close);
@@ -72,7 +90,22 @@ public class Home extends AppCompatActivity {
         });
 
 
+
     }
+
+    @Override
+    public void onClick(View v){
+        Intent i;
+
+        switch (v.getId()){
+            case R.id.co2 : i = new Intent(this,CO2.class);startActivity(i);break;
+            case R.id.co : i = new Intent(this,CO.class);startActivity(i);break;
+            case R.id.temp : i = new Intent(this,Temp.class);startActivity(i);break;
+            case R.id.humid : i = new Intent(this,Humid.class);startActivity(i);break;
+            default : break;
+        }
+    }
+
 
     public void Location_but()
     {
@@ -87,6 +120,7 @@ public class Home extends AppCompatActivity {
             }
         });
     }
+
 
 
     @Override
