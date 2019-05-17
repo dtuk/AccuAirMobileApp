@@ -115,7 +115,7 @@ public class Home extends AppCompatActivity implements View.OnClickListener{
             public void onClick(View view) {
 
                 Intent nextActivity;
-                nextActivity = new Intent(Home.this, Location.class);
+                nextActivity = new Intent(Home.this, MapsActivity.class);
                 startActivity(nextActivity);
             }
         });
