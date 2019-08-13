@@ -42,6 +42,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         //Add a marker in Colombo and move the camera
         LatLng Colombo = new LatLng(6.926259,79.856206);
         mMap.addMarker(new MarkerOptions().position(Colombo).title("Marker in Colombo"));
+
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(Colombo,10f));
     }
 }

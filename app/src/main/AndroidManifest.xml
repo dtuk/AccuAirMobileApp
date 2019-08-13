@@ -34,18 +34,6 @@
             android:name=".MapsActivity"
             android:label="Location"></activity>
         <activity
-            android:name=".Humid"
-            android:label="Humidity" />
-        <activity
-            android:name=".Temp"
-            android:label="Temperature" />
-        <activity
-            android:name=".CO"
-            android:label="Carbon Monoxide" />
-        <activity
-            android:name=".CO2"
-            android:label="Carbon Dioxide" />
-        <activity
             android:name=".Location"
             android:label="Location" />
         <activity

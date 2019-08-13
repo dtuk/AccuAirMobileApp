@@ -28,8 +28,8 @@ public class BackgroundWork extends AsyncTask<String,Void,String> {
     @Override
     protected String doInBackground(String... params) {
         String type = params[0];
-        String Login_url = "http://www.accuair.cf/login";
-        String Register_url = "http://www.accuair.cf/register";
+        String Login_url = "http://www.accuair.cf/api/login";
+        String Register_url = "http://www.accuair.cf/api/register";
         if(type.equals("Login")){
 
             try {
