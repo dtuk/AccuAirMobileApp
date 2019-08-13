@@ -26,18 +26,19 @@ public class Home extends AppCompatActivity implements View.OnClickListener{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        Location_but();
+
+        //Location_but();
 
         //card view
         co2 = (CardView)findViewById(R.id.co2);
-        co = (CardView)findViewById(R.id.co);
-        temp= (CardView)findViewById(R.id.temp);
-        humid = (CardView)findViewById(R.id.humid);
+        //co = (CardView)findViewById(R.id.co);
+        //temp= (CardView)findViewById(R.id.temp);
+        //humid = (CardView)findViewById(R.id.humid);
 
         co2.setOnClickListener(this);
-        co.setOnClickListener(this);
-        temp.setOnClickListener(this);
-        humid.setOnClickListener(this);
+        //co.setOnClickListener(this);
+        //temp.setOnClickListener(this);
+        //humid.setOnClickListener(this);
 
        // mainGrid = (GridLayout) findViewById(R.id.mainGrid);
         //navigation drawer
@@ -98,16 +99,16 @@ public class Home extends AppCompatActivity implements View.OnClickListener{
         Intent i;
 
         switch (v.getId()){
-            case R.id.co2 : i = new Intent(this,CO2.class);startActivity(i);break;
-            case R.id.co : i = new Intent(this,CO.class);startActivity(i);break;
-            case R.id.temp : i = new Intent(this,Temp.class);startActivity(i);break;
-            case R.id.humid : i = new Intent(this,Humid.class);startActivity(i);break;
+            case R.id.co2 : i = new Intent(this,MapsActivity.class);startActivity(i);break;
+            //case R.id.co : i = new Intent(this,CO.class);startActivity(i);break;
+            //case R.id.temp : i = new Intent(this,Temp.class);startActivity(i);break;
+            //case R.id.humid : i = new Intent(this,Humid.class);startActivity(i);break;
             default : break;
         }
     }
 
 
-    public void Location_but()
+    /*public void Location_but()
     {
         location_but=(Button)findViewById(R.id.location_but);
         location_but.setOnClickListener(new View.OnClickListener() {
@@ -119,7 +120,7 @@ public class Home extends AppCompatActivity implements View.OnClickListener{
                 startActivity(nextActivity);
             }
         });
-    }
+    }*/
 
 
 

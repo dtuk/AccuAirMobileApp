@@ -6,10 +6,14 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 
 public class Signup extends AppCompatActivity {
 
     public Button s_proceed_but;
+
+    public EditText username,email,password,copassword;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,12 +21,28 @@ public class Signup extends AppCompatActivity {
         setContentView(R.layout.activity_signup);
 
         Signup_proceed_but();
+        username = (EditText)findViewById(R.id.username);
+        email = (EditText)findViewById(R.id.email);
+        password = (EditText)findViewById(R.id.password);
+        copassword = (EditText)findViewById(R.id.copassword);
 
         //add back button
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
+    public void OnReg(View view){
+        String name = username.getText().toString();
+        String mail = email.getText().toString();
+        String pass = password.getText().toString();
+        String cpass =copassword.getText().toString();
+        String type = "Register";
+
+        BackgroundWork back = new BackgroundWork(this);
+        back.execute(type,name,mail,pass,cpass);
+
+
+    }
     public void Signup_proceed_but()
     {
         s_proceed_but=(Button)findViewById(R.id.s_proceed_but);

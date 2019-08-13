@@ -1,5 +1,6 @@
 package com.example.accuair;
 
+import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -11,11 +12,15 @@ import android.widget.EditText;
 public class Login extends AppCompatActivity {
 
     public Button l_proceed_but;
+    EditText username,password;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+        EditText username = (EditText) findViewById(R.id.username);
+        EditText password = (EditText) findViewById(R.id.password);
 
         Login_proceed_but();
 
@@ -29,15 +34,22 @@ public class Login extends AppCompatActivity {
         l_proceed_but.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-        EditText username = (EditText) findViewById(R.id.username);
-        EditText password = (EditText) findViewById(R.id.password);
-        if (username.getText().toString().trim().equals("user") && password.getText().toString().equals("abc")) {
             Intent nextActivity = new Intent(Login.this, Home.class);
             startActivity(nextActivity);
         }
 
-            }
         });
+    }
+
+    public void OnLogin(View view){
+        String name = username.getText().toString();
+        String pass = password.getText().toString();
+        String type = "Login";
+
+        BackgroundWork back = new BackgroundWork(this);
+        back.execute(type,name,pass);
+
+
     }
 
 
