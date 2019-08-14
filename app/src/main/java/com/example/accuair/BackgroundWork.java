@@ -27,14 +27,14 @@ public class BackgroundWork extends AsyncTask<String,Void,String> {
 
     @Override
     protected String doInBackground(String... params) {
-        String type = params[0];
+        String status = params[0];
         String Login_url = "http://www.accuair.cf/api/login";
         String Register_url = "http://www.accuair.cf/api/register";
-        if(type.equals("Login")){
+        if(status.equals("1")){
 
             try {
                 URL url = new URL(Login_url);
-                String name = params[1];
+                String email = params[1];
                 String pass = params[2];
                 HttpURLConnection connect = (HttpURLConnection)url.openConnection();
                 connect.setRequestMethod("POST");
@@ -43,7 +43,7 @@ public class BackgroundWork extends AsyncTask<String,Void,String> {
 
                 OutputStream out = connect.getOutputStream();
                 BufferedWriter buff = new BufferedWriter(new OutputStreamWriter(out,  "UTF-8"));
-                String post_data = URLEncoder.encode("name","UTF-8")+"="+URLEncoder.encode(name,"UTF-8")+"&"+
+                String post_data = URLEncoder.encode("name","UTF-8")+"="+URLEncoder.encode(email,"UTF-8")+"&"+
                         URLEncoder.encode("pass","UTF-8")+"="+URLEncoder.encode(pass,"UTF-8");
                 buff.write(post_data);
                 buff.flush();
@@ -71,7 +71,7 @@ public class BackgroundWork extends AsyncTask<String,Void,String> {
             }
 
 
-        } else if(type.equals("Register")){
+        } else if(status.equals("Register")){
 
             try {
                 URL url = new URL(Register_url);
